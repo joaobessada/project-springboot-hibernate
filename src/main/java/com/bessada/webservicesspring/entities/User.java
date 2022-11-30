@@ -38,7 +38,7 @@ public class User implements Serializable {
 	public User(Long id, String name, String email, String phone, String password) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.setName(name);
 		this.email = email;
 		this.phone = phone;
 		this.password = password;
@@ -79,6 +79,14 @@ public class User implements Serializable {
 	public List<Order> getOrders() {
 		return orders;
 	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	@Override
 	public int hashCode() {
@@ -96,6 +104,7 @@ public class User implements Serializable {
 		User other = (User) obj;
 		return Objects.equals(id, other.id);
 	}
+
 
 
 	
